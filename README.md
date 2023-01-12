@@ -1,3 +1,9 @@
 # My Portfolio! 
 
-## Under Construction
+## Technologies used
+- Vite
+- React
+- TailwindCSS
+- DaisyUI
+- Three.js
+- Spline
