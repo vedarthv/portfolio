@@ -1,5 +1,4 @@
 import Spline from "@splinetool/react-spline";
-import { Mail } from "react-feather";
 
 export default function App() {
   return (
