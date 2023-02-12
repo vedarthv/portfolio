@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Form from "./Form";
+import Form from "./Form/Form";
 
 function Body() {
   const [modalOpen, setModalOpen] = useState(false);
