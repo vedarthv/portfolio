@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { User } from "./Schema";
 import emailjs from "@emailjs/browser";
-import { env } from "node:process";
 
 const Form = () => {
   const {
