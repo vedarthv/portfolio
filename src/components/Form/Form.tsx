@@ -4,6 +4,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { User } from "./Schema";
 import emailjs from "@emailjs/browser";
 
+interface ExtendedImportMeta extends ImportMeta {
+  readonly env: Record<string, string>;
+}
+
+declare const importMeta: ExtendedImportMeta;
+
 const Form = () => {
   const {
     register,
@@ -16,10 +22,10 @@ const Form = () => {
 
   const onSubmit = (data) => {
     emailjs.send(
-      process.env.SERVICE_ID!,
-      process.env.TEMPLATE_ID!,
+      importMeta.env.VITE_SERVICE_ID!,
+      importMeta.env.VITE_TEMPLATE_ID!,
       data,
-      process.env.EMAILJS_PUB_KEY!
+      importMeta.env.VITE_EMAILJS_PUB_KEY!
     );
     reset();
   };
