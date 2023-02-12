@@ -4,7 +4,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { User } from "./Schema";
 import emailjs from "@emailjs/browser";
 
-const Form = () => {
+interface FormInterface {
+  onClose: () => {};
+}
+
+const Form = (props: FormInterface) => {
   const {
     register,
     handleSubmit,
@@ -22,6 +26,7 @@ const Form = () => {
       import.meta.env.VITE_EMAILJS_PUB_KEY!
     );
     reset();
+    props.onClose();
   };
 
   return (
