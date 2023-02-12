@@ -16,10 +16,10 @@ const Form = () => {
 
   const onSubmit = (data) => {
     emailjs.send(
-      process.env.VITE_SERVICE_ID!,
-      process.env.VITE_TEMPLATE_ID!,
+      import.meta.env.VITE_SERVICE_ID!,
+      import.meta.env.VITE_TEMPLATE_ID!,
       data,
-      process.env.VITE_EMAILJS_PUB_KEY!
+      import.meta.env.VITE_EMAILJS_PUB_KEY!
     );
     reset();
   };
